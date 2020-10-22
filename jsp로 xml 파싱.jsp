@@ -8,7 +8,7 @@
 <head>
 </head>
 <body>
-	<h1 align=center>공공 와이파이 조회</h1>
+	<h1 align=center>xml 파싱</h1>
 	<%
 		//파싱을 위한 준비과정
 		DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
