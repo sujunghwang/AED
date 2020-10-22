@@ -3,7 +3,6 @@
 <%@ page import="java.sql.*, javax.sql.*, java.io.*, java.net.*"%>
 <%@ page
 	import="javax.xml.parsers.* ,org.w3c.dom.*, javax.xml.xpath.*, org.xml.sax.InputSource"%>
-<!--xml파일을 읽어오기 위해서 위 xml과 w3c를 import하는 것이 반드시 필요합니다.-->
 <html>
 <head>
 </head>
@@ -32,7 +31,6 @@
 			Document doc = b.parse(url);
 			doc.getDocumentElement().normalize();
 
-			//XPath 생성, XPath는 XML 노드들을 CSS 다루듯이 쉽게 다루도록 도와주는 API 입니다.
 			XPath xpath = XPathFactory.newInstance().newXPath();
 
 
@@ -52,7 +50,7 @@
 					continue;
 				}
 
-				//아래 내용은 소재지지번주소가 없을 경우 소재지도로명주소 컬럼값을 읽어오도록 한 것 입니다.
+				//아래 내용은 도로명 주소가 없을 경우 지번주소 컬럼값을 읽어오도록 한 것 입니다.
 				try {
 					out.println("<td>" + tag_local_org.item(i).getFirstChild().getTextContent() + " " + tag_local.item(i).getFirstChild().getTextContent() + "</td>");
 				} catch (Exception e) {
